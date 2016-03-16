@@ -41,7 +41,7 @@ export default DS.RESTSerializer.extend({
   */
   extractMeta: function(store, typeClass, payload) {
     if (payload && payload.meta) {
-      var adapter = store.adapterFor(typeClass.modelName);
+      var adapter = store.adapterFor(typeClass);
 
       if (adapter && adapter.get('since') !== null && payload.meta[adapter.get('since')] !== undefined) {
         payload.meta.since = payload.meta[adapter.get('since')];
